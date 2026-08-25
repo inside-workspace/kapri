@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://inside-workspace.de/kapri/schema/0.9.0/kap_manifest.schema.json",
+  "title": "Package Manifest",
+  "description": "Normative JSON Schema for S1 – Package Manifest Schema of the KAPRI Specification Suite.",
+  "$comment": "This schema references the common data types defined by SC1 – Common Data Types.",
+
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "document_type",
+    "schema_version",
+    "package_id",
+    "knowledge_asset_id",
+    "knowledge_asset_version_id",
+    "knowledge_asset_version_label",
+    "title",
+    "publication_scope",
+    "responsible_organization",
+    "published_at",
+    "packing_list",
+    "compositions",
+    "signature"
+  ],
+
+  "properties": {
+
+    "document_type": {
+      "type": "string",
+      "const": "kap_manifest",
+      "description": "Identifies the document type."
+    },
+
+    "schema_version": {
+      "type": "string",
+      "const": "0.9.0",
+      "description": "SC1 §4.3 Schema Version. Version of the referenced Package Manifest schema."
+    },
+
+    "package_id": {
+      "type": "string",
+      "format": "uri",
+      "description": "SC1 §4.5 URI. Unique identifier of the Knowledge Asset Package."
+    },
+
+    "knowledge_asset_id": {
+      "type": "string",
+      "format": "uri",
+      "description": "SC1 §4.5 URI. Unique identifier of the Knowledge Asset."
+    },
+
+    "knowledge_asset_version_id": {
+      "type": "string",
+      "description": "SC1 §4.2 Version Identifier. Unique identifier of the published Knowledge Asset version."
+    },
+
+    "knowledge_asset_version_label": {
+      "type": "string",
+      "description": "Human-readable label of the published Knowledge Asset version."
+    },
+
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the published Knowledge Asset version."
+    },
+
+    "publication_scope": {
+      "type": "string",
+      "enum": [
+        "complete",
+        "partial"
+      ],
+      "description": "Publication scope of the Knowledge Asset Package."
+    },
+
+    "responsible_organization": {
+      "$ref": "#/$defs/organization"
+    },
+
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "SC1 §4.16 Timestamp. Publication timestamp of the Package."
+    },
+
+    "validity": {
+      "$ref": "#/$defs/validity_period"
+    },
+
+    "packing_list": {
+      "$ref": "#/$defs/document_reference"
+    },
+
+    "compositions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/document_reference"
+      }
+    },
+
+    "signature": {
+      "$ref": "#/$defs/signature"
+    }
+  },
+
+  "$defs": {
+
+    "document_reference": {
+      "type": "object",
+      "description": "SC1 §4.9 Document Reference. Reference to a Package document including integrity information.",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "hash_algorithm",
+        "hash"
+      ],
+      "properties": {
+        "document_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the referenced Package document."
+        },
+        "hash_algorithm": {
+          "type": "string",
+          "description": "SC1 §4.11 Hash Algorithm. Cryptographic algorithm used to calculate the Hash."
+        },
+        "hash": {
+          "type": "string",
+          "description": "SC1 §4.10 Hash. Cryptographic digest of the referenced Package document."
+        }
+      }
+    },
+
+    "organization": {
+      "type": "object",
+      "description": "SC1 §4.4 Organization. Organization responsible for publication.",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "name"
+      ],
+      "properties": {
+        "organization_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the organization."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable organization name."
+        }
+      }
+    },
+
+    "validity_period": {
+      "type": "object",
+      "description": "SC1 §4.17 Validity Period.",
+      "additionalProperties": false,
+      "required": [
+        "valid_from"
+      ],
+      "properties": {
+        "valid_from": {
+          "type": "string",
+          "format": "date-time",
+          "description": "SC1 §4.16 Timestamp. Beginning of the validity period."
+        },
+        "valid_until": {
+          "type": "string",
+          "format": "date-time",
+          "description": "SC1 §4.16 Timestamp. End of the validity period."
+        }
+      }
+    },
+
+    "signature": {
+      "type": "object",
+      "description": "SC1 §4.12 Signature. Digital signature protecting the Package Manifest.",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "certificate_chain",
+        "signature_value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "description": "Cryptographic signature algorithm."
+        },
+        "certificate_chain": {
+          "type": "array",
+          "minItems": 1,
+          "description": "SC1 §4.13 Certificate Reference[]. Ordered leaf-to-root, self-contained (each entry embeds its own certificate).",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "certificate_id",
+              "subject",
+              "issuer",
+              "serial_number",
+              "certificate"
+            ],
+            "properties": {
+              "certificate_id": {
+                "type": "string",
+                "format": "uri",
+                "description": "SC1 §4.13 Certificate Reference. Stable identifier of the certificate."
+              },
+              "subject": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Subject Distinguished Name in RFC 4514 string form."
+              },
+              "issuer": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Issuer Distinguished Name in RFC 4514 string form."
+              },
+              "serial_number": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Certificate serial number, decimal string."
+              },
+              "certificate": {
+                "type": "string",
+                "contentEncoding": "base64",
+                "description": "SC1 §4.13 Certificate Reference. DER-encoded X.509 certificate using Base64 according to RFC 4648 Section 4 with padding."
+              }
+            }
+          }
+        },
+        "signature_value": {
+          "type": "string",
+          "description": "Digital signature over the canonical representation of the Package Manifest."
+        }
+      }
+    }
+
+  }
+}

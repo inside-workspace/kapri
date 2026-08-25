@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://inside-workspace.de/kapri/schema/0.9.0/kap_composition.schema.json",
+
+  "title": "Composition",
+
+  "description": "Normative JSON Schema for S3 – Composition Schema of the KAPRI Specification Suite.",
+
+  "$comment": "This schema references the common data types defined by SC1 – Common Data Types.",
+
+  "type": "object",
+
+  "additionalProperties": false,
+
+  "required": [
+    "document_type",
+    "schema_version",
+    "composition_id",
+    "items"
+  ],
+
+  "properties": {
+
+    "document_type": {
+      "type": "string",
+      "const": "kap_composition",
+      "description": "Identifies the document type."
+    },
+
+    "schema_version": {
+      "type": "string",
+      "const": "0.9.0",
+      "description": "SC1 §4.3 Schema Version. Version of the referenced Composition schema."
+    },
+
+    "composition_id": {
+      "type": "string",
+      "format": "uri",
+      "description": "SC1 §4.5 URI. Unique identifier of the Composition."
+    },
+
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Top-level Composition Items.",
+      "items": {
+        "$ref": "#/$defs/composition_item"
+      }
+    },
+
+    "relations": {
+      "type": "array",
+      "description": "Semantic relationships between Composition Items.",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    }
+
+  },
+
+  "$defs": {
+
+    "composition_item": {
+
+      "type": "object",
+
+      "description": "Structure defined by S3 §3.1 Composition Structure. Individual properties reference the SC1 Common Data Types listed below.",
+
+      "additionalProperties": false,
+
+      "required": [
+        "item_id"
+      ],
+
+      "properties": {
+
+        "item_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the Composition Item."
+        },
+
+        "content_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the referenced Content Item."
+        },
+
+        "file_ids": {
+          "type": "array",
+          "description": "SC1 §4.5 URI. References Package Files defined by the Packing List.",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+
+        "external_references": {
+          "type": "array",
+          "description": "SC1 §4.5 URI. References external resources.",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+
+        "items": {
+          "type": "array",
+          "description": "Child Composition Items.",
+          "items": {
+            "$ref": "#/$defs/composition_item"
+          }
+        },
+
+        "annotation": {
+          "type": "string",
+          "description": "Optional human-readable annotation."
+        }
+
+      }
+
+    },
+
+    "relation": {
+
+      "type": "object",
+
+      "description": "Structure defined by S3 §3.1 Composition Structure. Individual properties reference the SC1 Common Data Types listed below.",
+
+      "additionalProperties": false,
+
+      "required": [
+        "relation_id",
+        "source_item_id",
+        "target_item_id",
+        "relation_type"
+      ],
+
+      "properties": {
+
+        "relation_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the Relation."
+        },
+
+        "source_item_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Source Composition Item."
+        },
+
+        "target_item_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Target Composition Item."
+        },
+
+        "relation_type": {
+          "type": "string",
+          "description": "Semantic type of the Relation."
+        },
+
+        "annotation": {
+          "type": "string",
+          "description": "Optional human-readable annotation."
+        }
+
+      }
+
+    }
+
+  }
+
+}

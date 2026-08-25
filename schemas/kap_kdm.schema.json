@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://inside-workspace.de/kapri/schema/0.9.0/kap_kdm.schema.json",
+  "title": "KAP Key Delivery Message",
+  "description": "Normative JSON Schema for S4 – KAP Key Delivery Message Schema of the KAPRI Specification Suite.",
+  "$comment": "This schema references the common data types defined by SC1 – Common Data Types.",
+
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "document_type",
+    "schema_version",
+    "kdm_id",
+    "package_id",
+    "recipient",
+    "recipient_certificate",
+    "key_entries",
+    "signature"
+  ],
+
+  "properties": {
+    "document_type": {
+      "type": "string",
+      "const": "kap_kdm",
+      "description": "Identifies the document type."
+    },
+
+    "schema_version": {
+      "type": "string",
+      "const": "0.9.0",
+      "description": "SC1 §4.3 Schema Version. Version of the referenced KAP Key Delivery Message schema."
+    },
+
+    "kdm_id": {
+      "type": "string",
+      "format": "uri",
+      "description": "SC1 §4.5 URI. Unique identifier of the KAP Key Delivery Message."
+    },
+
+    "package_id": {
+      "type": "string",
+      "format": "uri",
+      "description": "SC1 §4.5 URI. Identifies the referenced Knowledge Asset Package."
+    },
+
+    "recipient": {
+      "$ref": "#/$defs/organization"
+    },
+
+    "recipient_certificate": {
+      "$ref": "#/$defs/certificate_reference",
+      "description": "Identifies the Recipient Certificate whose public key was used to encrypt the File Keys."
+    },
+
+    "key_entries": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Collection of recipient-specific Encrypted File Keys.",
+      "items": {
+        "$ref": "#/$defs/key_entry"
+      }
+    },
+
+    "signature": {
+      "$ref": "#/$defs/signature"
+    }
+  },
+
+  "$defs": {
+    "organization": {
+      "type": "object",
+      "description": "SC1 §4.4 Organization. Intended recipient of the KAP Key Delivery Message.",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "name"
+      ],
+      "properties": {
+        "organization_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.5 URI. Unique identifier of the recipient organization."
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the recipient organization."
+        }
+      }
+    },
+
+    "certificate_reference": {
+      "type": "object",
+      "description": "SC1 §4.13 Certificate Reference. Identifies and embeds an X.509 certificate.",
+      "additionalProperties": false,
+      "required": [
+        "certificate_id",
+        "subject",
+        "issuer",
+        "serial_number",
+        "certificate"
+      ],
+      "properties": {
+        "certificate_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.13 Certificate Reference. Stable identifier of the certificate."
+        },
+        "subject": {
+          "type": "string",
+          "description": "SC1 §4.13 Certificate Reference. Subject Distinguished Name in RFC 4514 string form."
+        },
+        "issuer": {
+          "type": "string",
+          "description": "SC1 §4.13 Certificate Reference. Issuer Distinguished Name in RFC 4514 string form."
+        },
+        "serial_number": {
+          "type": "string",
+          "description": "SC1 §4.13 Certificate Reference. Certificate serial number represented as a decimal string."
+        },
+        "certificate": {
+          "type": "string",
+          "contentEncoding": "base64",
+          "description": "SC1 §4.13 Certificate Reference. DER-encoded X.509 certificate using Base64 according to RFC 4648 Section 4 with padding."
+        }
+      }
+    },
+
+    "key_entry": {
+      "type": "object",
+      "description": "Structure defined by S4 §3.1 Structure. Associates one Key Identifier with one recipient-specific Encrypted File Key.",
+      "additionalProperties": false,
+      "required": [
+        "key_id",
+        "encrypted_file_key"
+      ],
+      "properties": {
+        "key_id": {
+          "type": "string",
+          "format": "uri",
+          "description": "SC1 §4.15 Key Identifier. Identifies the symmetric File Key."
+        },
+        "encrypted_file_key": {
+          "type": "string",
+          "description": "SC1 §4.14 Encrypted File Key. Recipient-specific encrypted representation of the symmetric File Key."
+        }
+      }
+    },
+
+    "signature": {
+      "type": "object",
+      "description": "SC1 §4.12 Signature. Digital signature protecting the KAP Key Delivery Message.",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "certificate_chain",
+        "signature_value"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "description": "Cryptographic signature algorithm."
+        },
+        "certificate_chain": {
+          "type": "array",
+          "minItems": 1,
+          "description": "SC1 §4.13 Certificate Reference[]. Ordered leaf-to-root and self-contained.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "certificate_id",
+              "subject",
+              "issuer",
+              "serial_number",
+              "certificate"
+            ],
+            "properties": {
+              "certificate_id": {
+                "type": "string",
+                "format": "uri",
+                "description": "SC1 §4.13 Certificate Reference. Stable identifier of the certificate."
+              },
+              "subject": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Subject Distinguished Name in RFC 4514 string form."
+              },
+              "issuer": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Issuer Distinguished Name in RFC 4514 string form."
+              },
+              "serial_number": {
+                "type": "string",
+                "description": "SC1 §4.13 Certificate Reference. Certificate serial number represented as a decimal string."
+              },
+              "certificate": {
+                "type": "string",
+                "contentEncoding": "base64",
+                "description": "SC1 §4.13 Certificate Reference. DER-encoded X.509 certificate using Base64 according to RFC 4648 Section 4 with padding."
+              }
+            }
+          }
+        },
+        "signature_value": {
+          "type": "string",
+          "description": "Digital signature over the canonical representation of the KAP Key Delivery Message."
+        }
+      }
+    }
+  }
+}

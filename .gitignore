@@ -1,0 +1,23 @@
+.DS_Store
+*.swp
+.idea/
+.vscode/
+.env
+
+# Generated reference-implementation material
+/reference_implementation/certificates/
+/reference_implementation/keystore/
+/reference_implementation/output/
+
+# Private keys must never be committed
+*.key
+
+# Generated conformance-test workspaces; keep the published minimal example
+/conformance_test/*/
+!/conformance_test/example/
+!/conformance_test/example/**
+!/conformance_test/scripts/
+!/conformance_test/scripts/**
+/conformance_test/example/state/
+/conformance_test/example/decrypted/
+/conformance_test/example/validation-report.json

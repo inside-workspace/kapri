@@ -1,0 +1,14 @@
+{
+  "document_type": "kap_composition",
+  "schema_version": "0.9.0",
+  "composition_id": "urn:uuid:d09a67bb-487e-4422-9e63-6a49d0312808",
+  "items": [
+    {
+      "item_id": "urn:uuid:528e6f7a-8b96-4f32-86f4-624b9b6990f0",
+      "content_id": "urn:uuid:8e487bd6-5aac-409d-a157-fcfc21cd64fa",
+      "file_ids": [
+        "urn:uuid:51efb9b5-4ba9-4b8f-81e1-f260fd09da11"
+      ]
+    }
+  ]
+}

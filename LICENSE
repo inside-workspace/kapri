@@ -1,0 +1,13 @@
+# KAPRI License
+
+This repository contains components distributed under different licenses.
+
+| Component | License |
+|----------|---------|
+| Specification and documentation | CC BY 4.0 |
+| Schemas | Apache License 2.0 |
+| Reference implementation | Apache License 2.0 |
+| Examples | Apache License 2.0 |
+| Conformance tests | Apache License 2.0 |
+
+The full license texts are provided in the accompanying license files.

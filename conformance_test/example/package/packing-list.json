@@ -1,0 +1,15 @@
+{
+  "document_type": "kap_packing_list",
+  "schema_version": "0.9.0",
+  "packing_list_id": "urn:uuid:c542f92f-ef91-48a4-af9b-4da009c75f18",
+  "files": [
+    {
+      "file_id": "urn:uuid:51efb9b5-4ba9-4b8f-81e1-f260fd09da11",
+      "path": "files/example.md",
+      "media_type": "text/markdown",
+      "size": 160,
+      "hash_algorithm": "SHA-256",
+      "hash": "oteWpTWrJkCXh3GPGJx7AfVuCTmMB7kuBhHt1-7CPSE"
+    }
+  ]
+}

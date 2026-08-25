@@ -1,0 +1,54 @@
+{
+  "document_type": "kap_manifest",
+  "schema_version": "0.9.0",
+  "package_id": "urn:uuid:dd6e73d3-8a03-43e4-9ace-00d648c14f12",
+  "knowledge_asset_id": "urn:uuid:8189313f-03c2-486f-adb6-c3e796464dad",
+  "knowledge_asset_version_id": "urn:uuid:7e6207f7-4fe7-4e60-a126-6711a7d9cc6f",
+  "knowledge_asset_version_label": "1.0",
+  "title": "KAPRI Reference Package",
+  "publication_scope": "complete",
+  "responsible_organization": {
+    "organization_id": "urn:kap:organization:kapri-reference",
+    "name": "KAPRI Reference Organization"
+  },
+  "published_at": "2026-08-25T08:26:44Z",
+  "packing_list": {
+    "document_id": "urn:uuid:c542f92f-ef91-48a4-af9b-4da009c75f18",
+    "hash_algorithm": "SHA-256",
+    "hash": "VOuUZqw6Ki_gVc_ADR5QYQBrwPZmpc1UgWokDtgul80"
+  },
+  "compositions": [
+    {
+      "document_id": "urn:uuid:d09a67bb-487e-4422-9e63-6a49d0312808",
+      "hash_algorithm": "SHA-256",
+      "hash": "rl0VuljnbhSiBKDGtmbnaEAm5JOx0Uqkfac7L-zLugE"
+    }
+  ],
+  "signature": {
+    "algorithm": "PS256",
+    "certificate_chain": [
+      {
+        "certificate_id": "urn:kap:certificate:sha256:ooNiy7YpF9BzimLutGBOaHpo0Jcqk5tfwFY7qFX9rBY",
+        "subject": "dnQualifier=tjGgfEIwT0dFuLSSrpt/rzYCtXE=,CN=KAPRI Reference Producer,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "issuer": "dnQualifier=6kl\\+rbL89gw/kjPKXk/oRWybbGk=,CN=KAPRI Reference Intermediate CA,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "serial_number": "3",
+        "certificate": "MIIFbDCCA9SgAwIBAgIBAzANBgkqhkiG9w0BAQsFADCBpzELMAkGA1UEBhMCREUxJzAlBgNVBAsMHktBUFJJIFJlZmVyZW5jZSBJbXBsZW1lbnRhdGlvbjEeMBwGA1UECgwVaW5zaWRlIHdvcmtzcGFjZSBHbWJIMSgwJgYDVQQDDB9LQVBSSSBSZWZlcmVuY2UgSW50ZXJtZWRpYXRlIENBMSUwIwYDVQQuExw2a2wrcmJMODlndy9ralBLWGsvb1JXeWJiR2s9MB4XDTI2MDEwMTAwMDAwMFoXDTMwMTIzMTAwMDAwMFowgaAxCzAJBgNVBAYTAkRFMScwJQYDVQQLDB5LQVBSSSBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xHjAcBgNVBAoMFWluc2lkZSB3b3Jrc3BhY2UgR21iSDEhMB8GA1UEAwwYS0FQUkkgUmVmZXJlbmNlIFByb2R1Y2VyMSUwIwYDVQQuExx0akdnZkVJd1QwZEZ1TFNTcnB0L3J6WUN0WEU9MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA0kMu5UDtnUPHstipWwf2VKVC2fKImZZYSpn1vVt0cfhQHTU0xgeT9lK0D1GKd17de1JLmERdi74IJcJqaohGkFS+QH9YUowZ+wtQwxc0FEgLu53Xoi5hPYdtXlnbhiwHJAcP870CRCySfAcA27iJVTpZ71qWUAyjrC3aXNcrCmRGMdhbfs9ryIuiG80EwR19hjsX8iLzKE5MpuZ0NcTNizG/0K5UWLiZ4K0dnb6Tt5V/QoL2VHgMLzlwRGBxDbjsMfMerE6nP04mw39TGeJGWEAyf6T2m8YogK8IUwkjMSKr7xJaRRDDfac0stPB6O35kCyGh2Jw+RFVI+KY2FGZXJpM9b382daIui4q07/4bLyHukEt4Fufjzpn/5+5+XJsUaiMCU5OhrLMPOYIoFYQWMAgwmkhyIIMod8ijKek4ned+5pbpKo9id14olkUla/tmcaM1MeEPH557q/+9VEOsWJIcuG4XQ5wrP0fniKQ0cHDuWKslJtuuBtsQKnPUYGzAgMBAAGjgacwgaQwHQYDVR0OBBYEFLYxoHxCME9HRbi0kq6bf682ArVxMB8GA1UdIwQYMBaAFOpJfq2y/PYMP5Izyl5P6EVsm2xpMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgbAMBMGA1UdJQQMMAoGCCsGAQUFBwMDMC8GA1UdEQQoMCaGJHVybjprYXA6b3JnYW5pemF0aW9uOmthcHJpLXJlZmVyZW5jZTANBgkqhkiG9w0BAQsFAAOCAYEAfXTSS2DxsVzIT78vwTxVnIVUYIvtM63p0fjJRaaBjHbr0hHFq9KK6jLkyNE55t1rQM7I882/AaqUGEw5HefxeP4gFqMfOXy8WW+fH0SZsLmkrdXpKNHYpiO699Tblvhcj95KGslpTIl29plP6dfX17gc+DDUS8jmcp7We0ZrN3vK3ekiBvx5Q9gaiKoFG/cg8P0wqZECEycNs1mbBQbsnHwJYWM3V3is9adAnb2mQN0vHGWbR9K2fJcJ+WqjdQoCsWPlajrV3vSdBHdbgO4SHhrnfpHVLMjCC3VPwzth4mKPRXVj8J/LN5SJr+ptlKk2Jm1Vp2x0RgHQciUDPZ8SEOiBIz47qfSB6fm5NI7cH5XHUvkZGslzZqIW4QOKXn3lsBTgpAXgLLH0zSzdtIifbsMlYuK6CU6PadMa/8VFFSbufsQl5EcA8UISuCPUDQtdPTpQ1IMeDtELz0pyfr0Y+Ge93Zb1m+XzsM00uBfDqPmNEBNdouF2IlEpJ+ijSz3R"
+      },
+      {
+        "certificate_id": "urn:kap:certificate:sha256:WvW9dN2zzqzY2ya_7EG7cIor_ma3VZ8qxXSPrsE6-UQ",
+        "subject": "dnQualifier=6kl\\+rbL89gw/kjPKXk/oRWybbGk=,CN=KAPRI Reference Intermediate CA,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "issuer": "dnQualifier=8wlT07Ig5mHBIC9obSDS0ePL6RU=,CN=KAPRI Reference Root CA,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "serial_number": "2",
+        "certificate": "MIIFKTCCA5GgAwIBAgIBAjANBgkqhkiG9w0BAQsFADCBnzELMAkGA1UEBhMCREUxJzAlBgNVBAsMHktBUFJJIFJlZmVyZW5jZSBJbXBsZW1lbnRhdGlvbjEeMBwGA1UECgwVaW5zaWRlIHdvcmtzcGFjZSBHbWJIMSAwHgYDVQQDDBdLQVBSSSBSZWZlcmVuY2UgUm9vdCBDQTElMCMGA1UELhMcOHdsVDA3SWc1bUhCSUM5b2JTRFMwZVBMNlJVPTAeFw0yNjAxMDEwMDAwMDBaFw0zMDEyMzEwMDAwMDBaMIGnMQswCQYDVQQGEwJERTEnMCUGA1UECwweS0FQUkkgUmVmZXJlbmNlIEltcGxlbWVudGF0aW9uMR4wHAYDVQQKDBVpbnNpZGUgd29ya3NwYWNlIEdtYkgxKDAmBgNVBAMMH0tBUFJJIFJlZmVyZW5jZSBJbnRlcm1lZGlhdGUgQ0ExJTAjBgNVBC4THDZrbCtyYkw4OWd3L2tqUEtYay9vUld5YmJHaz0wggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAwggGKAoIBgQChMGrUe5qOixk2igZY9hlAgtflpQgvjzYoUOgOrDN6v/wnYUH6BgzYPrkTVSh0Ggn/eOHFW9h8q3JbCyamdDRGTE9j78j2M6StlZRAnQrNndUpp48NLE7LJf906wxPPQBxO2NdDE7m7JFswkF+vxxl7nc9wn4IkO9fA7AMD72bqNZH7K6yY/8/Q79lJonrUrCZCVyiykzkDgVUOcNVkj/ccUePovUhWduINU2NiwamtSRfzomXgIstLSJIDSDc7cM9Gqk/WEt/mBe+kglaMf/itityDnE0mUrks69wG1AFGjPMM+8F1D1CNvIc2WW6JDhPfbmXSUJDV/ebvwUBO6RRosL6+y4Y9YbYTGpXhr1P4QZdxWEYjmY3+oOU2qai/emsarT7+FUoOXa/HM59eF/eLcAR5CcrYCRHQuEw0NEs+XnZYjGlDLrH4rQVZc98e46IaDXWbp61EA2tT9rTBXvYtxLeTwIzAT2SdPUyfId2SYg9fyHcXtuF6UB51rMMU1cCAwEAAaNmMGQwHQYDVR0OBBYEFOpJfq2y/PYMP5Izyl5P6EVsm2xpMB8GA1UdIwQYMBaAFPMJU9OyIOZhwSAvaG0g0tHjy+kVMBIGA1UdEwEB/wQIMAYBAf8CAQAwDgYDVR0PAQH/BAQDAgEGMA0GCSqGSIb3DQEBCwUAA4IBgQBwupMkdaDWH41QdLwx8hBrprQxNBfSqs3YWjbNtfyawt8VoVTKEWh0a11WVUlLbf8EIr8YShNDyXBqjD3gL0xMc8JwyDG9GlzMYtO/KXBoPYCNDm/Zs1i4P2+fVVGZqP9/tcNNzJPz35Ep+AmbDf4R0onQbhy7EK8Y3RSsbvEfM8oCUpMv4RtD14/K3kSLeYVqm1pVywXevl0D1FGirUdqzWtsZDHRGIYBLAkE5RvVwJgp1uYhX24gmD07PvBGp+5rFyQJpXRkWUPzb19CqN96CRkMDlIKv+neMyFX7HlkL2fHfJcXcEnmHe4ApPHu2MhCtas9WO7MeWTtKsxYy3BTxnDzh5gImLmdIDoDR3NCaKagC6EmPTDfh3K/rtLT5g0n9GZMyrKPOA61/fw2R06lN6SEP2vqZTpDziOZfyRbwD88OvYHslN2/hpZX/lCEnc36x7aHNlTn6ASeFOqlak5l+xphzfAtDOmaTLDUuYBo89anlbG7+/whQ6+2+DE8t8="
+      },
+      {
+        "certificate_id": "urn:kap:certificate:sha256:h1RkQB63iw4Ht9hobTXgPvUpxWoOujj2TuXcjmi5rU4",
+        "subject": "dnQualifier=8wlT07Ig5mHBIC9obSDS0ePL6RU=,CN=KAPRI Reference Root CA,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "issuer": "dnQualifier=8wlT07Ig5mHBIC9obSDS0ePL6RU=,CN=KAPRI Reference Root CA,O=inside workspace GmbH,OU=KAPRI Reference Implementation,C=DE",
+        "serial_number": "1",
+        "certificate": "MIIFADCCA2igAwIBAgIBATANBgkqhkiG9w0BAQsFADCBnzELMAkGA1UEBhMCREUxJzAlBgNVBAsMHktBUFJJIFJlZmVyZW5jZSBJbXBsZW1lbnRhdGlvbjEeMBwGA1UECgwVaW5zaWRlIHdvcmtzcGFjZSBHbWJIMSAwHgYDVQQDDBdLQVBSSSBSZWZlcmVuY2UgUm9vdCBDQTElMCMGA1UELhMcOHdsVDA3SWc1bUhCSUM5b2JTRFMwZVBMNlJVPTAeFw0yNjAxMDEwMDAwMDBaFw0zMDEyMzEwMDAwMDBaMIGfMQswCQYDVQQGEwJERTEnMCUGA1UECwweS0FQUkkgUmVmZXJlbmNlIEltcGxlbWVudGF0aW9uMR4wHAYDVQQKDBVpbnNpZGUgd29ya3NwYWNlIEdtYkgxIDAeBgNVBAMMF0tBUFJJIFJlZmVyZW5jZSBSb290IENBMSUwIwYDVQQuExw4d2xUMDdJZzVtSEJJQzlvYlNEUzBlUEw2UlU9MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAppNYKVWC9zmIVCTAu3whAP/820dB9MPF+i2XNVlDxDm924Nwti1URnXnGkJRQEWSuDLLsV8CGWVVuo13rX/nSJ8qFuVK7MkL2SjtremkrQ+zYww2LXvgD5HnggHoM1C3VQ1VV3RaBwQQZIJVKKfLfpMiu3IxTqGhJoJSwBdoESZ6DumNPrizh6P1yCXUoMJXeOJJZQsgDjNRYj4zlL5PjUuhmwCK6AGUmZ1w5I9wT5ORHY+pI4vU+nDTQeISaiMFn7KE7bhhUgvUMmRuvEX3bt16ND+DEhqQ9iD0PtYCIRFcj6gS7b3Fd3dTebpKPfEdZFtR/WYKFCtIvGdnWoGxHE30mIW8s0bJ1dQnF7GWVJ+vNGV9tupmgl95Z1s5zQE4NJ8muEmt3AZJpVj0FWk9nYQEAA7Qld8ZGFSgm2oN9qW3tymkNqGIeynlUt7gG6b04NFBoZT48vqjesiRc4w2n6/UEqo+ELrkNRKaZH6qB4u7K/5ZQiTiKnfrqIUw02/BAgMBAAGjRTBDMB0GA1UdDgQWBBTzCVPTsiDmYcEgL2htINLR48vpFTASBgNVHRMBAf8ECDAGAQH/AgEBMA4GA1UdDwEB/wQEAwIBBjANBgkqhkiG9w0BAQsFAAOCAYEAQ1Ih6EgnxkLvJUIvp6/oyYA8b4wygSIIWWqa954wwmy+5OOZpOU5hxNZurhMn5PXNtAMHMzLj6uHGKFLsoSdIIskbkVEF1gZiXhzRR1z+QQGfG3j/P9c8DYPJ4Lz50Sethp/OSE0heke7a1Y6erhZy4nMyYzgplqZJLYJywP2zNdbjRvqekhMmKZkxyfnZ8HA53Ibjn9XpQh2/AACSq008y4fMkNT5LMn1us4BXRWx63H8xg71/Op8XjlTCkcYxfJwTpP1SgixtsAzjWAaeDUe0mbVQc8skRlkbiLCqhMgjimJe6BV0Ji7+sJTSWu1IA3/ch1QT2XNRchwjdAlP5CntuXx6XzOlCsekWIY/x18jlrQNoyoBdyTrmJul2aPh/FivDvBh9WE9wy+ppzRyJOLITPJSta6myyP1DtUB/lRqrmq4XsXeL0ON49AI3VSlZqjNaJ5cpGK8OYbKhsdjn4Etlj/GNbkjCv+3hJ+cmtDdrBWcbGX0g0S4Vuv2mijU4"
+      }
+    ],
+    "signature_value": "EkugUfCJNO2hA0uzdP4Ke22yCura9KP2K3OVS_EPennmyywFrYIDIlTpFiv1fm-LoitkQU3sk0aVeGsJ7R8BdNR20yLIPs5io86Pm1x2fMS7sz51ko5bU94k3Z7YUogisTDDHE_UCJXnQweWmAkgsmS8pU4v_5M_bw9z2Md79O7IvjtVKsQu6ZJzbbuxLiEdiuViv3HrMN8vJJRpiv-Hd6RbShz4fARDAMykWOky-HHQUXBeTiB46UpM1chgByZQnmPNdqXCELlkPAAOznTSoVPk9mxOnt-q3kfTeh6nIXIlZuim_VFN96YR872HGKcX1V60VKefkA7lWNfiU6HgYHKSLySkp5nhe9Fzg8hOx93othtVCmoVhya-UhMtqb4H-RT69jjKwRiJkCPw1Rfd3M-zMSJcWC8b2j0taWUag4x87_VV9trjHGpCitaaPVBuHvyrvhYjsmCKTg4ovNR-2wd4ZzGVIu9ZoCLqA5h9my0NSUsTpcSqt_zjbsTgZJpQ"
+  }
+}
