@@ -1,11 +1,11 @@
 # T2 – Package Generation
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1 Introduction
@@ -75,9 +75,25 @@ Package Files MAY be encrypted before inclusion in the Package.
 ### 2.2 Generation Workflow
 
 The reference Package Generation workflow SHALL consist of the following steps:
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/5f3764a4-89fb-4c29-bb80-89213d2280fe/pictures/03340eea-f176-4ebf-90ea-d31e3bda1517/content_img.png)
-
+```
+Knowledge Asset Version Selected for Publication
+↓
+Generate Package Files
+↓
+Encrypt Package Files (if required)
+↓
+Generate Packing List
+↓
+Generate Composition
+↓
+Generate Package Manifest
+↓
+Canonicalize Package Manifest
+↓
+Digitally Sign Package Manifest
+↓
+Knowledge Asset Package
+```
 If Package Files are encrypted, recipient-specific File Key delivery SHALL be performed separately according to T4 – Secure Delivery.
 
 ### 2.3 Generated Components
@@ -236,9 +252,21 @@ Expected result: The Package Manifest contains a valid Signature that can be ind
 ## 4 Test Execution Order
 
 The Package Generation tests SHALL be executed in the following order:
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/5f3764a4-89fb-4c29-bb80-89213d2280fe/pictures/5791d90d-ce87-4a91-a5d8-8773713dca7f/content_img.png)
-
+```
+T2.1 Generate Package Files
+↓
+T2.2 Encrypt Package Files (if required)
+↓
+T2.3 Generate Packing List
+↓
+T2.4 Generate Composition
+↓
+T2.5 Generate Package Manifest
+↓
+T2.6 Canonicalize Package Manifest
+↓
+T2.7 Digitally Sign Package Manifest
+```
 Each applicable test depends on the successful completion of all preceding applicable tests.
 
 ## 5 Expected Results

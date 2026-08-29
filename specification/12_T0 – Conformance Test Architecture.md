@@ -1,11 +1,11 @@
 # T0 – Conformance Test Architecture
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Architecture Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Architecture Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -55,11 +55,10 @@ Cryptographic tests SHALL use the applicable Cryptographic Profile.
 
 The Reference Cryptographic Profile used by the KAPRI Reference Implementation is defined by T1 – Public Key Infrastructure (PKI).
 
----
 
-# 2. Architecture
+## 2. Architecture
 
-## 2.1 Purpose
+### 2.1 Purpose
 
 The Conformance Test Suite provides an executable framework for verifying structural, semantic and cryptographic conformance with the KAPRI Specification Suite.
 
@@ -72,7 +71,7 @@ It separates:
 
 Technical Validation SHALL remain distinct from Recipient Decisions as defined by S0 – Knowledge Asset Package Architecture Specification.
 
-## 2.2 Test Hierarchy
+### 2.2 Test Hierarchy
 
 ```
 T0  Conformance Test Architecture
@@ -94,19 +93,26 @@ The test groups have the following responsibilities:
 | T4 | Perform and validate recipient-specific Secure Delivery |
 | T5 | Verify interoperability between independent implementations |
 
-## 2.3 Execution Order
+### 2.3 Execution Order
 
 The complete Conformance Test Suite SHALL be executed in the following logical order:
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/467e754e-cc00-4747-b41a-1e825ecbd464/pictures/1a28110e-f471-4b13-83d2-bfa3afe7dc05/content_img.png)
-
+```
+T1 Public Key Infrastructure
+↓
+T2 Package Generation
+↓
+T3 Package Validation
+↓
+T4 Secure Delivery
+↓
+T5 Interoperability
+```
 The defined execution order reflects the logical dependencies between the test groups.
 
 Individual test groups MAY be executed independently where all required prerequisites and test artifacts are available.
 
----
 
-# 3. Test Design Principles
+## 3. Test Design Principles
 
 Every executable test SHALL:
 
@@ -128,19 +134,18 @@ Where applicable, a test SHALL identify the normative requirement or requirement
 
 Cryptographic tests SHALL identify the applicable Cryptographic Profile.
 
----
 
-# 4. Reference Test Artifacts
+## 4. Reference Test Artifacts
 
 The Conformance Test Suite uses complementary test artifacts for different validation purposes.
 
-## 4.1 Minimal Examples
+### 4.1 Minimal Examples
 
 Minimal, single-purpose examples SHALL be provided where isolated testing of a schema, data type or validation rule is required.
 
 These examples are intended to make individual requirements independently testable without requiring a complete Knowledge Asset Package.
 
-## 4.2 KAPRI Reference Package
+### 4.2 KAPRI Reference Package
 
 The KAPRI Reference Package is a complete, realistic Knowledge Asset Package generated according to T2 – Package Generation.
 
@@ -155,7 +160,7 @@ The Reference Package MAY contain encrypted Package Files.
 
 The Reference Package provides the shared test artifact for Package Validation and Interoperability Testing.
 
-## 4.3 Secure Delivery Test Artifacts
+### 4.3 Secure Delivery Test Artifacts
 
 Where the Reference Package contains encrypted Package Files, the Conformance Test Suite SHALL provide the additional artifacts required for T4 – Secure Delivery.
 
@@ -170,7 +175,7 @@ File Keys, Private Keys and KAP-KDMs SHALL NOT be part of the Knowledge Asset Pa
 
 They are separate Conformance Test Artifacts.
 
-## 4.4 PKI and Cryptographic Test Artifacts
+### 4.4 PKI and Cryptographic Test Artifacts
 
 Certificates and cryptographic keys required by the Reference Implementation SHALL be generated according to T1 – Public Key Infrastructure (PKI).
 
@@ -182,9 +187,8 @@ Certificates embedded as Certificate References according to SC1 – Common Data
 
 The certification chain embedded in the Package Manifest Signature is therefore part of the Package Manifest, while standalone certificate files used by the test environment are not Package Files.
 
----
 
-# 5. Reference Implementation
+## 5. Reference Implementation
 
 The KAPRI Reference Implementation is implemented in Ruby.
 
@@ -203,29 +207,35 @@ Independent implementations MAY use any programming language or implementation t
 
 Conformance is determined by observable behavior and validation results, not by implementation technology.
 
----
 
-# 6. Test Organization
+## 6. Test Organization
 
 Each conformance test SHALL be documented as an individual Knowledge Asset.
 
 A test consists of:
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/467e754e-cc00-4747-b41a-1e825ecbd464/pictures/73d2861a-0b54-4e3c-af97-95f1b42a909c/content_img.png)
-
+```
+Normative Requirement
+↓
+Test Specification
+↓
+Executable Reference Test
+↓
+Test Input
+↓
+Validation Result
+```
 The executable Ruby script is the Reference Implementation of the corresponding test and does not itself define the normative requirement.
 
 The normative requirement originates from the applicable KAPRI specification.
 
----
 
-# 7. Validation Model
+## 7. Validation Model
 
 The Conformance Test Suite distinguishes between Technical Validation, Recipient Decisions and Secure Delivery Validation.
 
 The authoritative Validation Model is defined by S0 – Knowledge Asset Package Architecture Specification.
 
-## 7.1 Technical Validation
+### 7.1 Technical Validation
 
 Technical Validation determines whether a Knowledge Asset Package is technically valid according to the KAPRI Specification Suite.
 
@@ -238,13 +248,13 @@ These include, where applicable:
 - Digital Signature
 - Certificate Chain
 
-> Certificate validity SHALL be evaluated as part of Certificate Chain validation using the published_at timestamp of the Package Manifest, as defined by S0 – Knowledge Asset Package Architecture Specification.
+Certificate validity SHALL be evaluated as part of Certificate Chain validation using the published_at timestamp of the Package Manifest, as defined by S0 – Knowledge Asset Package Architecture Specification.
 
 Technical Validation SHALL produce deterministic results based on the Package, the applicable specifications and the applicable Cryptographic Profile.
 
 Technical Validation SHALL NOT establish trust in the Producer or determine whether a Recipient accepts or processes the Package.
 
-## 7.2 Recipient Decisions
+### 7.2 Recipient Decisions
 
 Recipient Decisions determine whether a technically valid Knowledge Asset Package can or should be accepted and processed by a specific Recipient.
 
@@ -262,7 +272,7 @@ Different conforming Recipients MAY therefore reach different Recipient Decision
 
 A Recipient Decision SHALL NOT change the result of Technical Validation.
 
-## 7.3 Secure Delivery Validation
+### 7.3 Secure Delivery Validation
 
 Secure Delivery Validation verifies recipient-specific cryptographic processing independently of Package Technical Validation.
 
@@ -277,9 +287,7 @@ Secure Delivery Validation is defined by T4 – Secure Delivery and includes, wh
 
 Successful Secure Delivery Validation does not by itself establish trust in the Producer or authorization of the Recipient.
 
----
-
-# 8. Conformance
+## 8. Conformance
 
 An implementation claiming conformance with the KAPRI Conformance Test Architecture SHALL:
 

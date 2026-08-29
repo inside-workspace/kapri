@@ -1,11 +1,11 @@
 # R0 – Reference Implementation Specification
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Informative Implementation Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Informative Implementation Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -203,4 +203,3 @@ The Reference Implementation demonstrates one interoperable implementation of th
 
 Other implementations MAY use different software architectures or implementation technologies while preserving the externally observable behaviour and interoperability defined by the normative specifications.
 
- 

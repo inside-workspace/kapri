@@ -1,11 +1,11 @@
 # S2 – Packing List Schema
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Schema Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Schema Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -21,8 +21,6 @@ For the purposes of this specification, Package Files are the physical Files def
 Package Documents, including manifest.json, packing-list.json and Composition documents, are not Package Files and SHALL NOT be included in the Packing List.
 
 The Packing List enables independent verification of Package File completeness and integrity.
-
-###  
 
 ### 1.2 Scope
 
@@ -63,8 +61,8 @@ It identifies every Package File together with the metadata required to verify i
 
 The Packing List provides the information required to:
 
-- identify every Package file contained in the Package,
-- locate every Package file within the Package,
+- identify every Package File contained in the Package,
+- locate every Package File within the Package,
 - verify file integrity,
 - verify package completeness,
 - support package processing,
@@ -295,4 +293,3 @@ Conforming implementations SHALL preserve:
 - the integrity information associated with every file,
 - the association between encrypted Package Files and their corresponding Key Identifiers.
 
- 

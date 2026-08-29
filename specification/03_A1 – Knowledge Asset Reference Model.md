@@ -1,11 +1,11 @@
 # A1 – Knowledge Asset Reference Model
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Model Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Model Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
 
 ## 1. Introduction
@@ -16,13 +16,13 @@ This document defines the Knowledge Asset Reference Model.
 
 The Knowledge Asset Reference Model specializes the General Asset Model for the domain of knowledge. It establishes the concepts required to describe responsible, versioned organizational knowledge.
 
-his specification is normative.
+This specification is normative.
 
 ### 1.2 Scope
 
 This specification defines
 
-- the concept of Knowledge State as a specialization of State,
+- the concept of Knowledge State as a specialization of State,
 - the characteristics of Knowledge Assets,
 - the architectural specialization of the General Asset Model for knowledge.
 
@@ -44,9 +44,7 @@ This specification specializes the General Asset Model.
 
 All concepts defined by A0 remain valid.
 
-Where this specification introduces additional concepts, they extend—but do not redefine—the semantics established by the General Asset Model.
-
- 
+Where this specification introduces additional concepts, they extend but do not redefine the semantics established by the General Asset Model.
 
 ## 2. Introduction
 
@@ -495,4 +493,3 @@ An implementation SHALL NOT claim conformance with this specification if it
 - modifies published Versions,
 - or changes the identity of a Knowledge Asset through its technical Representation.
 
- 

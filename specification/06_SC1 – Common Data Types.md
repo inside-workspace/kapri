@@ -1,11 +1,11 @@
 # SC1 – Common Data Types
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Common Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Common Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -832,14 +832,14 @@ File Paths:
 
 Hash values SHALL:
 
-- be valid Base64url without padding;
+- be valid Base64url without padding,
 - decode to the length required by the selected Hash Algorithm.
 
 Signature objects SHALL conform to the structure defined by §4.12.
 
 Signature Values SHALL:
 
-- be valid Base64url without padding;
+- be valid Base64url without padding,
 - decode to a binary signature compatible with the selected signature algorithm and key size.
 
 Certificate References SHALL conform to §4.13.

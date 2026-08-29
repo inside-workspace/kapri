@@ -1,11 +1,11 @@
 # T4 – Secure Delivery
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1 Introduction

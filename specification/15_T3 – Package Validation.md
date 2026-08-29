@@ -1,11 +1,11 @@
 # T3 – Package Validation
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1 Introduction
@@ -72,8 +72,6 @@ The reference validation workflow SHALL consist of the following steps.
 9. Validate Cross References.
 10. Generate Validation Report.
 
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/0b8503fc-31b7-4350-bb56-0d23a553234a/pictures/77890cff-d923-4b2e-8e4d-0e2370f7d783/content_img.png)
-
 Each validation step SHALL successfully complete before the subsequent step is executed.
 
 ### 2.3 Validation Responsibilities
@@ -119,8 +117,27 @@ The reference Package Validation SHALL provide the following executable conforma
 ## 4 Test Execution Order
 
 The Package Validation tests SHALL be executed in the following order.
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/0b8503fc-31b7-4350-bb56-0d23a553234a/pictures/8d4d2503-774b-4236-969f-b65105a9ecac/content_img.png)
+```
+T3.1 Open Package
+↓
+T3.2 Validate Package Manifest
+↓
+T3.3 Validate Digital Signature
+↓
+T3.4 Validate Certificate Chain
+↓
+T3.5 Validate Packing List
+↓
+T3.6 Validate Composition
+↓
+T3.7 Validate Package Files
+↓
+T3.8 Validate File Hashes
+↓
+T3.9 Validate Cross References
+↓
+T3.10 Generate Validation Report
+```
 
 Each test depends on the successful completion of all preceding tests.
 
@@ -151,4 +168,4 @@ An implementation claiming conformance with this specification SHALL:
 - produce deterministic validation results,
 - produce equivalent validation outcomes.
 
- 
+

@@ -1,11 +1,11 @@
 # SC0 – Common Serialization Rules
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Common Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Common Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction

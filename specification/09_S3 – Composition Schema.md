@@ -1,11 +1,11 @@
 # S3 – Composition Schema
 
-Version:  0.9.0 
-Status: Release Candidate
-Type: Normative Schema Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Schema Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -349,4 +349,4 @@ Conforming implementations SHALL preserve:
 - the semantic relationships defined by relations,
 - the associations between Composition Items, Content Items, Files, and External References.
 
- 
+

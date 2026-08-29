@@ -1,11 +1,11 @@
-# S0 – Knowledge Asset Package Architecture Specification
+# S0 – Knowledge Asset Package Architecture Specification
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Architecture Specification
-Author: Sabine Wax
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Architecture Specification  
+Author: Sabine Wax  
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
 
 ## 1. Introduction
@@ -452,9 +452,21 @@ Archived Packages remain valid representations of the published Knowledge Asset 
 Archival mechanisms are outside the scope of this specification.
 
 Lifecycle Diagramm:
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/fc90bb20-275e-4247-b12c-083726a71051/pictures/15901244-2e8d-409f-97bd-9056bf3316d6/content_img.png)
-
+```
+Approved Knowledge Asset Version
+↓
+Package Creation
+↓
+Validation
+↓
+Publication
+↓
+Distribution
+↓
+Reception and Processing
+↓
+Archiving
+```
 ## 7. Package Validation
 
 A Knowledge Asset Package SHALL provide sufficient information to enable independent evaluation by a Recipient.
@@ -470,8 +482,6 @@ This specification intentionally separates these activities.
 Technical validation produces objective and reproducible results.
 
 Recipient Decisions remain the responsibility of each receiving organization.
-
-### 7.1 Technical Validation
 
 ### 7.1 Technical Validation
 
@@ -599,4 +609,3 @@ It SHALL NOT validate the document against a different schema version or ignore 
 
 Compatibility between specification and schema versions SHALL be defined explicitly and SHALL NOT be assumed.
 
- 

@@ -1,11 +1,11 @@
 # T1 – Public Key Infrastructure (PKI)
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1 Introduction
@@ -16,9 +16,9 @@ This specification defines the reference Public Key Infrastructure and Reference
 
 The reference PKI provides the certificates required to:
 
-- generate and validate digital signatures of Package Manifests;
-- generate and validate digital signatures of KAP Key Delivery Messages;
-- encrypt File Keys for intended Recipients;
+- generate and validate digital signatures of Package Manifests,
+- generate and validate digital signatures of KAP Key Delivery Messages,
+- encrypt File Keys for intended Recipients,
 - recover recipient-specific File Keys.
 
 The Reference Cryptographic Profile defines the cryptographic algorithms, parameters and binary representations required for reproducible and interoperable conformance testing.
@@ -27,26 +27,26 @@ The Reference Cryptographic Profile defines the cryptographic algorithms, parame
 
 This specification defines:
 
-- the reference certification hierarchy;
-- certificate roles;
-- certificate constraints;
-- the Reference Cryptographic Profile;
-- Package File encryption;
-- File Key encryption;
-- digital-signature parameters;
-- certificate generation;
-- certificate-chain validation;
+- the reference certification hierarchy,
+- certificate roles,
+- certificate constraints,
+- the Reference Cryptographic Profile,
+- Package File encryption,
+- File Key encryption,
+- digital-signature parameters,
+- certificate generation,
+- certificate-chain validation,
 - the execution order of PKI conformance tests.
 
 This specification does not define:
 
-- production PKIs;
-- trust management;
-- certificate revocation;
-- timestamp authorities;
-- hardware security modules;
-- operational security policies;
-- long-term key management;
+- production PKIs,
+- trust management,
+- certificate revocation,
+- timestamp authorities,
+- hardware security modules,
+- operational security policies,
+- long-term key management,
 - secure storage of Private Keys.
 
 ### 1.3 Relationship to Other Specifications
@@ -55,13 +55,13 @@ This specification forms part of the KAPRI Conformance Test Suite.
 
 It supports requirements defined by:
 
-- SC1 – Common Data Types;
-- S1 – Package Manifest Schema;
-- S2 – Packing List Schema;
-- S4 – KAP Key Delivery Message Schema;
-- T2 – Package Generation;
-- T3 – Package Validation;
-- T4 – Secure Delivery;
+- SC1 – Common Data Types,
+- S1 – Package Manifest Schema,
+- S2 – Packing List Schema,
+- S4 – KAP Key Delivery Message Schema,
+- T2 – Package Generation,
+- T3 – Package Validation,
+- T4 – Secure Delivery,
 - T5 – Interoperability.
 
 The generated certificates and the Reference Cryptographic Profile are used by the KAPRI Reference Package and the applicable cryptographic conformance tests.
@@ -103,7 +103,7 @@ The Root Certification Authority SHALL issue the Intermediate Certification Auth
 
 The Intermediate Certification Authority SHALL issue:
 
-- Producer Certificates;
+- Producer Certificates,
 - Recipient Certificates.
 
 The Root Certification Authority SHALL NOT directly issue Producer Certificates or Recipient Certificates.
@@ -126,7 +126,7 @@ The Intermediate Certification Authority issues the end-entity certificates used
 
 Its Private Key is used to sign:
 
-- Producer Certificates;
+- Producer Certificates,
 - Recipient Certificates.
 
 #### 2.3.3 Producer Certificate
@@ -135,7 +135,7 @@ A Producer Certificate identifies the Producer responsible for a cryptographic s
 
 The corresponding Producer Private Key is used to sign:
 
-- Package Manifests;
+- Package Manifests,
 - KAP Key Delivery Messages.
 
 A Producer Certificate SHALL NOT be used to encrypt File Keys.
@@ -177,16 +177,16 @@ Hash values, signature values and Encrypted File Keys used by the Reference Cryp
 
 The following key algorithm applies to all certificate roles:
 
-- Root Certification Authority: RSA-3072;
-- Intermediate Certification Authority: RSA-3072;
-- Producer Certificate: RSA-3072;
+- Root Certification Authority: RSA-3072,
+- Intermediate Certification Authority: RSA-3072,
+- Producer Certificate: RSA-3072,
 - Recipient Certificate: RSA-3072.
 
 The cryptographic operation depends on the certificate role:
 
-- Root Certification Authority keys are used to sign Intermediate Certification Authority Certificates;
-- Intermediate Certification Authority keys are used to sign Producer Certificates and Recipient Certificates;
-- Producer keys are used with PS256 to sign Package Manifests and KAP Key Delivery Messages;
+- Root Certification Authority keys are used to sign Intermediate Certification Authority Certificates,
+- Intermediate Certification Authority keys are used to sign Producer Certificates and Recipient Certificates,
+- Producer keys are used with PS256 to sign Package Manifests and KAP Key Delivery Messages,
 - Recipient public keys are used with RSA-OAEP-256 to encrypt File Keys for a specific Recipient.
 
 Producer Certificates and Recipient Certificates SHALL use separate key pairs.
@@ -225,9 +225,9 @@ magic || nonce || ciphertext || authentication_tag
 
 where:
 
-- magic is the eight-octet ASCII sequence KAPENC01;
-- nonce is the 12-octet AES-GCM nonce;
-- ciphertext is the A256GCM-encrypted representation of the complete original Package File;
+- magic is the eight-octet ASCII sequence KAPENC01,
+- nonce is the 12-octet AES-GCM nonce,
+- ciphertext is the A256GCM-encrypted representation of the complete original Package File,
 - authentication_tag is the 16-octet AES-GCM authentication tag.
 
 The encrypted representation SHALL contain no additional octets.
@@ -240,8 +240,8 @@ The hash and File Size recorded in the Packing List SHALL be calculated from thi
 
 Decryption SHALL fail if:
 
-- the magic value is not KAPENC01;
-- the encrypted representation is malformed;
+- the magic value is not KAPENC01,
+- the encrypted representation is malformed,
 - or authentication-tag validation fails.
 
 Plaintext produced before successful authentication-tag validation SHALL NOT be processed, returned or otherwise exposed.
@@ -284,8 +284,8 @@ The RSA-OAEP-256 ciphertext SHALL be Base64url-encoded without padding and seria
 
 RSA-OAEP-256 decryption SHALL fail if:
 
-- OAEP decoding fails;
-- the recovered plaintext is not exactly 32 octets;
+- OAEP decoding fails,
+- the recovered plaintext is not exactly 32 octets,
 - or the required cryptographic parameters do not conform to this profile.
 
 A recovered File Key SHALL NOT be used unless RSA-OAEP-256 decryption has completed successfully.
@@ -296,32 +296,32 @@ A recovered File Key SHALL NOT be used unless RSA-OAEP-256 decryption has comple
 
 The Root Certification Authority Certificate SHALL:
 
-- identify itself as a Certification Authority;
-- permit certificate signing;
-- permit the issuance of an Intermediate Certification Authority Certificate;
-- use an RSA-3072 key pair;
+- identify itself as a Certification Authority,
+- permit certificate signing,
+- permit the issuance of an Intermediate Certification Authority Certificate,
+- use an RSA-3072 key pair,
 - be self-signed.
 
 #### 2.5.2 Intermediate Certification Authority Certificate
 
 The Intermediate Certification Authority Certificate SHALL:
 
-- identify itself as a Certification Authority;
-- permit certificate signing;
-- permit the issuance of Producer Certificates and Recipient Certificates;
-- prohibit the issuance of further subordinate Certification Authority Certificates;
-- use an RSA-3072 key pair;
+- identify itself as a Certification Authority,
+- permit certificate signing,
+- permit the issuance of Producer Certificates and Recipient Certificates,
+- prohibit the issuance of further subordinate Certification Authority Certificates,
+- use an RSA-3072 key pair,
 - be signed by the Root Certification Authority.
 
 #### 2.5.3 Producer Certificate
 
 A Producer Certificate SHALL:
 
-- identify itself as an end-entity certificate;
-- permit digital signatures;
-- not permit certificate signing;
-- not permit key encryption;
-- use an RSA-3072 key pair;
+- identify itself as an end-entity certificate,
+- permit digital signatures,
+- not permit certificate signing,
+- not permit key encryption,
+- use an RSA-3072 key pair,
 - be signed by the Intermediate Certification Authority.
 
 #### 2.5.4 Recipient Certificate
@@ -330,12 +330,12 @@ A Producer Certificate SHALL:
 
 A Recipient Certificate SHALL:
 
-- identify itself as an end-entity certificate;
-- permit key encryption;
-- not permit certificate signing;
-- not permit digital signatures for Package Manifests or KAP Key Delivery Messages;
-- use an RSA-3072 key pair;
-- be signed by the Intermediate Certification Authority;
+- identify itself as an end-entity certificate,
+- permit key encryption,
+- not permit certificate signing,
+- not permit digital signatures for Package Manifests or KAP Key Delivery Messages,
+- use an RSA-3072 key pair,
+- be signed by the Intermediate Certification Authority,
 - contain a Subject Alternative Name extension with a uniformResourceIdentifier value identifying the Recipient organization.
 
 The uniformResourceIdentifier value SHALL be identical to the recipient.organization_id used in a KAP Key Delivery Message for that Recipient.
@@ -391,14 +391,14 @@ The test SHALL validate the complete certification chains of the generated Produ
 
 For each certification chain, the test SHALL verify:
 
-- the required chain order;
-- certificate signatures;
-- issuer and subject correspondence;
-- Certification Authority constraints;
-- end-entity constraints;
-- Key Usage constraints;
-- RSA key sizes;
-- certificate validity for the validation time defined by the test fixture;
+- the required chain order,
+- certificate signatures,
+- issuer and subject correspondence,
+- Certification Authority constraints,
+- end-entity constraints,
+- Key Usage constraints,
+- RSA key sizes,
+- certificate validity for the validation time defined by the test fixture,
 - the self-signature of the Root Certification Authority Certificate.
 
 Expected result: The Producer and Recipient certification chains are structurally and cryptographically valid.
@@ -409,22 +409,22 @@ Successful certification-chain validation does not establish trust in the Root C
 
 The test SHALL verify that the Reference Implementation supports:
 
-- SHA-256 hashing;
-- A256GCM Package File encryption and decryption;
-- PS256 signature generation and validation;
-- RSA-OAEP-256 File Key encryption and recovery;
-- Base64url encoding without padding for binary JSON values;
+- SHA-256 hashing,
+- A256GCM Package File encryption and decryption,
+- PS256 signature generation and validation,
+- RSA-OAEP-256 File Key encryption and recovery,
+- Base64url encoding without padding for binary JSON values,
 - the encrypted Package File representation defined by §2.4.1.
 
 The test SHALL include successful and unsuccessful cryptographic test vectors.
 
 Unsuccessful test vectors SHALL include:
 
-- an altered A256GCM ciphertext;
-- an altered A256GCM authentication tag;
-- a malformed encrypted Package File;
-- a PS256 signature created with non-conforming parameters;
-- an RSA-OAEP ciphertext using non-conforming parameters;
+- an altered A256GCM ciphertext,
+- an altered A256GCM authentication tag,
+- a malformed encrypted Package File,
+- a PS256 signature created with non-conforming parameters,
+- an RSA-OAEP ciphertext using non-conforming parameters,
 - an RSA-OAEP result that does not recover exactly 32 octets.
 
 Expected result: The Reference Implementation accepts conforming cryptographic inputs and rejects non-conforming or unauthenticated inputs.
@@ -433,7 +433,19 @@ Expected result: The Reference Implementation accepts conforming cryptographic i
 
 The executable PKI and profile tests SHALL be executed in the following order:
 
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/b0bf6bec-c0ab-4e32-8bad-05b8e57e5546/pictures/b68c3333-dc25-4c7e-9421-0b10448d7427/content_img.png)
+```
+T1.1 Generate Root Certification Authority
+↓
+T1.2 Generate Intermediate Certification Authority
+↓
+T1.3 Generate Producer Certificate
+↓
+T1.4 Generate Recipient Certificate
+↓
+T1.5 Validate Certification Chain
+↓
+T1.6 Validate Reference Cryptographic Profile
+```
 
 Each test depends on the successful completion of all preceding tests.
 
@@ -443,12 +455,12 @@ Individual tests MAY be executed independently if their required inputs and prer
 
 The generated certificates SHALL:
 
-- conform to the defined certification hierarchy;
-- use RSA-3072 key pairs;
-- contain the expected issuer and subject information;
-- satisfy the validity period defined by the test fixture;
-- contain the required certificate constraints and Key Usage extensions;
-- successfully validate as complete certification chains;
+- conform to the defined certification hierarchy,
+- use RSA-3072 key pairs,
+- contain the expected issuer and subject information,
+- satisfy the validity period defined by the test fixture,
+- contain the required certificate constraints and Key Usage extensions,
+- successfully validate as complete certification chains,
 - be suitable for their defined cryptographic roles.
 
 Producer Certificates SHALL be suitable for PS256 digital signatures.
@@ -457,27 +469,27 @@ Recipient Certificates SHALL be suitable for RSA-OAEP-256 File Key encryption.
 
 The Reference Cryptographic Profile SHALL enable independent implementations to:
 
-- calculate identical SHA-256 hashes for identical inputs;
-- encrypt and decrypt Package Files using A256GCM;
-- serialize and parse the encrypted Package File format;
-- generate and validate PS256 signatures;
-- encrypt and recover 256-bit File Keys using RSA-OAEP-256;
+- calculate identical SHA-256 hashes for identical inputs,
+- encrypt and decrypt Package Files using A256GCM,
+- serialize and parse the encrypted Package File format,
+- generate and validate PS256 signatures,
+- encrypt and recover 256-bit File Keys using RSA-OAEP-256,
 - serialize binary cryptographic values consistently.
 
 ## 6 Conformance
 
 An implementation claiming conformance with this specification SHALL:
 
-- generate certificates equivalent to the reference PKI;
-- preserve the defined certification hierarchy;
-- preserve the separation between Producer and Recipient key pairs;
-- implement the Reference Cryptographic Profile defined by this specification;
-- use the complete cryptographic parameters associated with A256GCM, PS256 and RSA-OAEP-256;
-- implement the encrypted Package File representation defined by §2.4.1;
-- successfully validate all generated certification chains;
-- successfully execute all applicable conformance tests defined by this specification;
-- produce interoperable certificates suitable for signing and validating Package Manifests and KAP Key Delivery Messages;
-- produce Recipient Certificates suitable for encrypting File Keys;
+- generate certificates equivalent to the reference PKI,
+- preserve the defined certification hierarchy,
+- preserve the separation between Producer and Recipient key pairs,
+- implement the Reference Cryptographic Profile defined by this specification,
+- use the complete cryptographic parameters associated with A256GCM, PS256 and RSA-OAEP-256,
+- implement the encrypted Package File representation defined by §2.4.1,
+- successfully validate all generated certification chains,
+- successfully execute all applicable conformance tests defined by this specification,
+- produce interoperable certificates suitable for signing and validating Package Manifests and KAP Key Delivery Messages,
+- produce Recipient Certificates suitable for encrypting File Keys,
 - reject malformed, unauthenticated or cryptographically non-conforming inputs.
 
 Conformance with this specification demonstrates conformance with the reference PKI and Reference Cryptographic Profile.

@@ -1,15 +1,13 @@
 # K0 – Knowledge Asset Package Architecture Guide
 
-Version: 0.9.0
+Version: 0.9.0  
+Status: Informative  
+Type: Architecture Guide  
+Author: Sabine Wax  
 
-Status: Informative
-
-Type: Architecture Guide
-Author: Sabine Wax
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
- 
 
 ## 1. Introduction
 
@@ -213,7 +211,27 @@ Different organizations MAY legitimately reach different decisions for the same 
 
 The following lifecycle illustrates the typical publication, exchange, and consumption of a Knowledge Asset Package.
 
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/a86ede50-b9f0-4f70-88d7-2be5a66f07d7/pictures/bededbce-b674-4633-b811-f5b40d944749/content_img.png)
+```
+Knowledge Asset Version Ready for Approval
+      ↓
+Approve Knowledge Asset Version
+      ↓
+Create Package
+      ↓
+Sign Package Manifest
+      ↓
+Publish Package
+      ↓
+Create KAP-KDM/s if required
+      ↓
+Receive Package
+      ↓
+Technical Validation
+      ↓
+Recipient Decisions
+      ↓
+Accept or Reject Package
+```
 
 This workflow separates publication, technical validation, and organizational acceptance into distinct stages. The actions performed after a Package has been accepted are outside the scope of this specification suite.
 
@@ -240,4 +258,4 @@ The following table helps readers identify the most relevant document for their 
 | Implement or Test Secure Delivery | T4 – Secure Delivery |
 | Verify Interoperability | T5 – Interoperability |
 
- 
+

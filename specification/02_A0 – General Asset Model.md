@@ -1,11 +1,11 @@
-# A0 – General Asset Model
+# A0 – General Asset Model
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Model Specification
-Author: Sabine Wax
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Model Specification  
+Author: Sabine Wax  
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -58,7 +58,7 @@ The key words MUST, MUST NOT, SHALL, SHALL NOT, SHOULD, SHOULD NOT, MAY, and OPT
 
 An implementation claiming conformance with this specification SHALL satisfy all normative requirements defined by this specification.
 
-## 2. Introduction
+## 2. Motivation and Model Overview
 
 Organizations continuously create descriptions of subjects such as products, services, processes, regulations, software, designs, and knowledge.
 
@@ -96,7 +96,7 @@ Domain-specific Asset Reference Models define how the concepts introduced by the
 
 ### 2.1 Design Objectives
 
-> The General Asset Model is designed to support independently evolving specialized Asset Reference Models through the following architectural objectives.
+The General Asset Model is designed to support independently evolving specialized Asset Reference Models through the following architectural objectives.
 
 #### Domain Independence
 
@@ -143,25 +143,23 @@ The concepts are intentionally arranged in a logical sequence in which every con
 This approach avoids circular definitions and provides a stable conceptual foundation for specialized Asset Reference Models.
 
 The conceptual progression is illustrated below.
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/3f6bc9be-86b3-4fa4-b5ce-01416788ee08/pictures/c9c5ae02-86f1-4586-bca2-376a27bcb2e6/content_img.png)
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
+```
+Subject
+↓
+State
+↓
+Responsibility
+↓
+Scope
+↓
+Asset
+↓
+Version
+↓
+Representation
+↓
+Publication
+```
 The conceptual sequence defined above is normative.
 
 Specialized Asset Reference Models SHALL preserve the semantics of these concepts.
@@ -367,9 +365,15 @@ Specialized Asset Reference Models MAY refine the lifecycle by introducing addit
 ### 6.1 Lifecycle Overview
 
 An Asset typically progresses through the following lifecycle stages.
-
-![](/uploads/dictionaries/64ca6f7b-5e26-4214-94f1-0920c7e4c8e9/3f6bc9be-86b3-4fa4-b5ce-01416788ee08/pictures/766b25ff-c14a-4631-9e9d-2f11bc46dae0/content_img.png)
-
+```
+Created
+↓
+Published
+↓
+Superseded
+↓
+Archived
+```
 The lifecycle defined by this specification is intentionally minimal.
 
 Specialized Asset Reference Models MAY refine the lifecycle by introducing additional stages, provided they preserve the semantics of the lifecycle defined by this specification.

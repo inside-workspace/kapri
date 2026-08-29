@@ -1,11 +1,11 @@
 # T5 – Interoperability
 
-Version: 0.9.0
-Status: Release Candidate
-Type: Normative Conformance Test Specification
+Version: 0.9.0  
+Status: Release Candidate  
+Type: Normative Conformance Test Specification  
 Author: Sabine Wax
 
-Copyright © 2026 inside workspace GmbH
+Copyright © 2026 inside workspace GmbH  
 This work is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) Licence.
 
 ## 1. Introduction
@@ -60,7 +60,6 @@ Cryptographic interoperability SHALL be tested using a Cryptographic Profile sup
 
 The Reference Cryptographic Profile is defined by T1 – Public Key Infrastructure (PKI).
 
----
 
 # 2. Interoperability
 
@@ -156,7 +155,6 @@ Recipient Decisions are not required to be equivalent between implementations.
 
 Differences resulting solely from local trust policies, Product Support or Version Compatibility SHALL NOT by themselves constitute an interoperability failure.
 
----
 
 # 3. Conformance Tests
 
@@ -244,7 +242,6 @@ Interoperability SHALL be established where:
 
 **Expected result:** The participating implementations are interoperable for the tested capabilities and Cryptographic Profile.
 
----
 
 # 4. Test Execution Order
 
@@ -270,7 +267,6 @@ T5.5 applies only where encrypted Package Files are included in the interoperabi
 
 Each applicable test depends on the successful completion of all required preceding tests.
 
----
 
 # 5. Expected Results
 
@@ -287,7 +283,6 @@ The interoperability process SHALL demonstrate that:
 
 Interoperability SHALL NOT require equivalent Recipient Decisions where those decisions depend on local trust policies or implementation capabilities.
 
----
 
 # 6. Conformance
 
