@@ -100,35 +100,36 @@ Together, the hierarchical structure and the semantic relationships define the l
 
 A Composition SHALL contain the following top-level properties.
 
-| Property | Type | Cardinality |
-| --- | --- | --- |
-| document_type | String | 1 |
-| schema_version | Schema Version | 1 |
-| composition_id | URI | 1 |
-| items | Composition Item[] | 1..n |
-| relations | Relation[] | 0..n |
+| Property       | Type               | Cardinality |
+|----------------|--------------------|-------------|
+| document_type  | String             | 1           |
+| schema_version | Schema Version     | 1           |
+| composition_id | URI                | 1           |
+| annotation     | String             | 0..1        |
+| items          | Composition Item[] | 1..n        |
+| relations      | Relation[]         | 0..n        |
+
 
 Each Composition Item SHALL contain the following properties.
 
-| Property | Type | Cardinality |
-| --- | --- | --- |
-| item_id | URI | 1 |
-| content_id | URI | 0..1 |
-| file_ids | URI[] | 0..n |
-| external_references | URI[] | 0..n |
-| items | Composition Item[] | 0..n |
-| annotation | String | 0..1 |
-|   |   |   |
+| Property            | Type               | Cardinality |
+|---------------------|--------------------|-------------|
+| item_id             | URI                | 1           |
+| content_id          | URI                | 0..1        |
+| file_ids            | URI[]              | 0..n        |
+| external_references | URI[]              | 0..n        |
+| items               | Composition Item[] | 0..n        |
+| annotation          | String             | 0..1        |
 
 Each Relation SHALL contain the following properties.
 
-| Property | Type | Cardinality |
-| --- | --- | --- |
-| relation_id | URI | 1 |
-| source_item_id | URI | 1 |
-| target_item_id | URI | 1 |
-| relation_type | String | 1 |
-| annotation | String | 0..1 |
+| Property       | Type   | Cardinality |
+|----------------|--------|-------------|
+| relation_id    | URI    | 1           |
+| source_item_id | URI    | 1           |
+| target_item_id | URI    | 1           |
+| relation_type  | String | 1           |
+| annotation     | String | 0..1        |
 
 The common data types used by these properties are defined by SC1 – Common Data Types.
 
@@ -242,9 +243,11 @@ Examples include: references, depends_on, illustrates, implements, …
 
 The interpretation of relation_type values is outside the scope of this specification.
 
-#### 3.2.15 annotation
+#### 3.2.15 annotation (Composition, Composition Item or Relation)
 
-Provides optional human-readable information about a Composition Item or Relation.
+Provides optional human-readable information about a Composition, a Composition Item or Relation.
+
+For a Composition, the annotation MAY describe its purpose, audience, context or intended use.
 
 For a Composition Item, the annotation MAY describe its purpose, role or position within the Composition.
 

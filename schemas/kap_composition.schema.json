@@ -39,6 +39,11 @@
       "description": "SC1 §4.5 URI. Unique identifier of the Composition."
     },
 
+    "annotation": {
+      "type": "string",
+      "description": "Optional human-readable annotation."
+    },
+
     "items": {
       "type": "array",
       "minItems": 1,

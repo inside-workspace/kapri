@@ -2,6 +2,7 @@
   "document_type": "kap_composition",
   "schema_version": "0.9.0",
   "composition_id": "urn:uuid:d09a67bb-487e-4422-9e63-6a49d0312808",
+  "annotation": "complete KAPRI Reference Package",
   "items": [
     {
       "item_id": "urn:uuid:528e6f7a-8b96-4f32-86f4-624b9b6990f0",
